@@ -33,6 +33,7 @@ sudo apt-get install -y dotnet-sdk-8.0
 ## Agregar snapd
 Con snap podemos agregar diversas aplicaciones en un entorno aislado, es la forma más rápida de instalar aplicaciones como VS Code o Rider para poder desarrollar en .NET
 ```
+sudo rm /etc/apt/preferences.d/nosnap.pref
 sudo apt update
 sudo apt install snapd
 sudo systemctl enable --now snapd apparmor
