@@ -1,6 +1,6 @@
 # NOTAS DE INSTALACIÓN
 
-Instalación de dotnet en Linux Mint, aplica para las distribuciones basadas en Debian
+Instalación de .NET SDK (dotnet) en Linux Mint, aplica para las distribuciones basadas en Debian
 
 ## Agregar las keys de Microsoft
 
@@ -14,8 +14,8 @@ rm -f packages.microsoft.gpg
 
 ## Agregar Repositorio Microsoft
 
-[https://learn.microsoft.com/en-us/linux/packages](https://learn.microsoft.com/en-us/linux/packages)
-Si bien es cierto linux Mint está basado en ubuntu 24, esta solo tiene el sdk de dotnet-8, por lo cual aún a inicios de 2025 se puede instalar usando el repositorio destinado a ubuntu 22.04
+[https://learn.microsoft.com/en-us/linux/packages](https://learn.microsoft.com/en-us/linux/packages)  
+Si bien es cierto Linux Mint está basado en ubuntu 24, este repositorio solo tiene el sdk de .NET 8, por lo cual aún a inicios de 2025 se puede instalar .NET 6/7/8/9 usando el repositorio destinado a ubuntu 22.04
 
 ```
 curl -sSL -O https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb
@@ -24,14 +24,14 @@ rm packages-microsoft-prod.deb
 sudo apt-get update
 ```
 
-## Instalar Dotnet
-Instalar el SDK
+## Instalar .NET
+Instalar el SDK de .NET 8
 ```
 sudo apt-get install -y dotnet-sdk-8.0
 ```
 
 ## Agregar snapd
-Con snap podemos agregar diversas aplicaciones en un entorno aislado
+Con snap podemos agregar diversas aplicaciones en un entorno aislado, es la forma más rápida de instalar aplicaciones como VS Code o Rider para poder desarrollar en .NET
 ```
 sudo apt update
 sudo apt install snapd
@@ -60,8 +60,16 @@ Editor avanzando para .NET de Jet Brains, tiene una versión Community sin costo
 snap install rider --classic
 ```
 
-## Confiar en Certificado local de dotnet
+## Confiar en Certificado local de .NET
 Antes de ejecutar por primera vez nuestra aplicación en dotnet, debemos aceptar la confianza en el certificado local generado para poder correr levantar la aplicación web usando https
 ```
 dotnet dev-certs https --trust
 ```
+
+
+## Comandos básicos de .NET
+[https://learn.microsoft.com/en-us/dotnet/core/tools/](https://learn.microsoft.com/en-us/dotnet/core/tools/)  
+
+`dotnet run`: Ejecutar  
+`dotnet build`: Compilar  
+`dotnet watch`: Ejecutar recompilando automaticamente ante algún cambio
